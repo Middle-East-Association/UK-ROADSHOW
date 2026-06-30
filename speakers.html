@@ -4,33 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Speaker Biographies · MEA UK Roadshow 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy:   #1c2b3a;
-    --gold:   #b8952a;
-    --gold-lt:#d4ae52;
-    --cream:  #f5f2ec;
-    --warm:   #ede8df;
-    --muted:  #6b7280;
-    --text:   #1c2b3a;
-    --rule:   rgba(184,149,42,0.25);
+    --navy:      #1B2A6B;
+    --navy-dark: #0F1A45;
+    --gold:      #C9A84C;
+    --gold-lt:   #E8D5A3;
+    --gold-light:#E8D5A3;
+    --cream:     #F8F9FC;
+    --warm:      #E7E9F2;
+    --white:     #FFFFFF;
+    --muted:     #6B7A9F;
+    --text:      #1B2A6B;
+    --bg:        #F8F9FC;
+    --rule:      rgba(201,168,76,0.25);
   }
+
+  html { scroll-behavior: smooth; }
 
   body {
     background: var(--cream);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 15px;
     line-height: 1.7;
   }
 
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(27,42,107,0.1);
+    box-shadow: 0 2px 20px rgba(27,42,107,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .nav-logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { opacity: 1; color: var(--gold); }
+
+  .nav-register {
+    background: var(--navy) !important;
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 4px;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-register:hover { background: var(--gold) !important; }
+
   /* ── HEADER ── */
   .site-header {
-    background: var(--navy);
-    padding: 48px 0 40px;
+    background:
+      radial-gradient(ellipse 70% 60% at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 30%, rgba(27,42,107,0.8) 0%, transparent 70%),
+      linear-gradient(160deg, #0F1A45 0%, #1B2A6B 50%, #0F1A45 100%);
+    padding: 116px 0 48px;
     text-align: center;
     border-bottom: 3px solid var(--gold);
     position: relative;
@@ -41,7 +106,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 120%, rgba(184,149,42,0.12) 0%, transparent 70%);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30 Z' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
     pointer-events: none;
   }
 
@@ -58,7 +124,7 @@
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 500;
-    color: #f5f2ec;
+    color: #FAF7F2;
     line-height: 1.15;
     margin-bottom: 10px;
   }
@@ -67,7 +133,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 18px;
-    color: rgba(212,174,82,0.8);
+    color: rgba(232,213,163,0.8);
     margin-bottom: 28px;
   }
 
@@ -85,7 +151,7 @@
     text-transform: uppercase;
     color: rgba(245,242,236,0.55);
     padding: 0 18px;
-    border-right: 1px solid rgba(184,149,42,0.3);
+    border-right: 1px solid rgba(201,168,76,0.3);
   }
 
   .header-meta span:last-child { border-right: none; }
@@ -130,7 +196,7 @@
   }
 
   .speaker-card:hover {
-    box-shadow: 0 4px 24px rgba(28,43,58,0.08);
+    box-shadow: 0 4px 24px rgba(27,42,107,0.08);
   }
 
   .speaker-card + .speaker-card {
@@ -175,7 +241,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 1.5px solid rgba(184,149,42,0.5);
+    border: 1.5px solid rgba(201,168,76,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,7 +256,7 @@
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 19px;
     font-weight: 600;
-    color: #f5f2ec;
+    color: #FAF7F2;
     line-height: 1.2;
     margin-bottom: 6px;
   }
@@ -210,8 +276,8 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(184,149,42,0.6);
-    border: 1px solid rgba(184,149,42,0.25);
+    color: rgba(201,168,76,0.6);
+    border: 1px solid rgba(201,168,76,0.25);
     padding: 3px 8px;
   }
 
@@ -234,7 +300,7 @@
 
   /* ── TBC CARD ── */
   .speaker-card.tbc .speaker-left {
-    background: #2a3a4a;
+    background: #2C3D7A;
   }
 
   .speaker-card.tbc .speaker-initials {
@@ -248,7 +314,7 @@
   }
 
   .speaker-card.tbc .speaker-role {
-    color: rgba(184,149,42,0.5);
+    color: rgba(201,168,76,0.5);
   }
 
   .speaker-card.tbc .speaker-left::after {
@@ -353,6 +419,11 @@
   }
 
   @media (max-width: 640px) {
+    nav { padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+    .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; width: 100%; }
+    .nav-links a { font-size: 12px; }
+    .nav-logo-text { font-size: 13px; }
+    .site-header { padding: 150px 0 40px; }
     .speaker-inner { grid-template-columns: 1fr; }
     .speaker-left { padding: 22px 20px; }
     .speaker-left::after { top: auto; left: 0; right: 0; bottom: 0; width: 100%; height: 3px; }
@@ -363,10 +434,25 @@
 </head>
 <body>
 
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="data:image/png;base64,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" alt="The Middle East Association" style="height:48px; width:auto; border-radius:4px;">
+    <div class="nav-logo-text">The Middle East<br>Association</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#cities">Cities</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#programme">Programme</a>
+    <a href="speakers.html" class="active">Speakers</a>
+    <a href="index.html#partners">Partners</a>
+    <a href="index.html#cities" class="nav-register">Register Now</a>
+  </div>
+</nav>
+
 <!-- HEADER -->
 <header class="site-header">
   <div class="container">
-    <a href="index.html" style="display:inline-block; margin-bottom:18px; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#d4ae52; text-decoration:none;">&larr; Back to Roadshow</a>
     <p class="header-eyebrow">Middle East Association · UK Roadshow 2026</p>
     <h1 class="header-title">Speaker Biographies</h1>
     <p class="header-subtitle">Panellists, Partners &amp; Experts</p>
@@ -447,13 +533,13 @@
         <div class="speaker-details">
           <div class="speaker-name">Dr Tareq Abu Ghazaleh</div>
           <div class="speaker-role">Minister of Investment<br>Government of Jordan</div>
-          <div class="speaker-org-tag">MOIN &middot; London Event Only</div>
+          <div class="speaker-org-tag">MOIN &middot; London Event</div>
         </div>
       </div>
       <div class="speaker-right">
         <div class="speaker-bio">
           <p>Dr Tareq Abu Ghazaleh was appointed Minister of Investment in August 2025, bringing over two decades of leadership across the private sector in multiple regions, alongside senior public service experience. Immediately prior to his appointment, he served as Director of Economic Policies in the Office of His Majesty King Abdullah II, leading the national initiatives behind Jordan's Economic Modernization Vision.</p>
-          <p style="font-style:italic; color:var(--muted);">Confirmed for the MEA London event only; not part of the UK Roadshow 2026 five-city programme.</p>
+          <p style="font-style:italic; color:var(--muted);">Joining us at the MEA's London event.</p>
           <p>He is recognised as a leading authority on change management, with specialist expertise in strategy, IPO readiness and corporate governance. He holds a doctorate in industrial engineering from the University of Hertfordshire, UK.</p>
         </div>
       </div>
@@ -620,7 +706,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-logo">Middle East Association · UK Roadshow 2026</div>
-  <div class="footer-sub">20 to 24 July 2026 · <a href="https://uk-roadshow.the-mea.com/" style="color:rgba(184,149,42,0.6); text-decoration:none;">uk-roadshow.the-mea.com</a></div>
+  <div class="footer-sub">20 to 24 July 2026 · <a href="https://uk-roadshow.the-mea.com/" style="color:rgba(201,168,76,0.6); text-decoration:none;">uk-roadshow.the-mea.com</a></div>
 </footer>
 
 </body>
