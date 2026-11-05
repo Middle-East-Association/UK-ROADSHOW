@@ -641,10 +641,25 @@ nav {
 .partner-logo-card.dark-bg .partner-name, .partner-logo-card.aei-bg .partner-name { color: var(--navy); }
 
 .partner-logo-card.sponsor {
-  background: linear-gradient(135deg, #fff9eb, white);
+  background: white;
   border-color: rgba(201,168,76,0.4);
   min-width: 220px;
 }
+
+.sponsor-boilerplate {
+  max-width: 720px;
+  margin: 18px auto 8px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.sponsor-boilerplate a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+.sponsor-boilerplate a:hover { text-decoration: underline; }
 
 .stats-grid {
   display: grid;
