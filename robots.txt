@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uk-roadshow.the-mea.com/sitemap.xml
